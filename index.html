@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sarina Golrang Gallery</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f6f1e8;
+    color: #26231f;
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+
+header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    border-bottom: 1px solid #ded7cc;
+    background: #f8f4ec;
+}
+
+.logo {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+}
+
+.logo span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 7px;
+    margin-top: 2px;
+}
+
+.menu {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.search {
+    font-size: 22px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 60px 7%;
+    background: #e8dfd2;
+}
+
+.hero-image {
+    width: 58%;
+    height: 570px;
+    background:
+        linear-gradient(rgba(45,35,25,.12), rgba(45,35,25,.12)),
+        url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1400&q=85')
+        center/cover;
+}
+
+.hero-text {
+    width: 42%;
+    padding: 50px;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #806f5c;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 7vw, 95px);
+    line-height: .85;
+    margin-bottom: 35px;
+}
+
+.hero-line {
+    width: 60px;
+    border-top: 1px solid #6f6254;
+    margin-bottom: 30px;
+}
+
+.hero-text p {
+    max-width: 330px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    line-height: 1.35;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid #554b40;
+    color: #302b26;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* GALLERY */
+
+.gallery {
+    padding: 100px 7%;
+    background: #f8f4ec;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading .small-title {
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 58px;
+}
+
+.ornament {
+    margin: 15px auto;
+    width: 70px;
+    border-top: 1px solid #9d907e;
+}
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.art {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #ddd3c5;
+}
+
+.art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.art:hover img {
+    transform: scale(1.04);
+}
+
+.view-all {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ABOUT */
+
+.about {
+    padding: 100px 7%;
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    background: #eee7dc;
+}
+
+.about-text {
+    width: 45%;
+}
+
+.about-image {
+    width: 55%;
+    height: 450px;
+    background:
+        url('https://images.unsplash.com/photo-1594784055210-2f7f6a5c4e0c?auto=format&fit=crop&w=1200&q=85')
+        center/cover;
+}
+
+.about h2 {
+    font-size: 58px;
+    margin-bottom: 25px;
+}
+
+.about p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1.55;
+    color: #62594f;
+}
+
+.signature {
+    margin-top: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 30px;
+}
+
+/* EXHIBITIONS */
+
+.exhibitions {
+    text-align: center;
+    padding: 100px 7%;
+    background: #f5efe5;
+}
+
+.exhibitions h2 {
+    font-size: 58px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    border-top: 1px solid #ded7cc;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+        height: 75px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+
+    .logo span {
+        font-size: 7px;
+        letter-spacing: 5px;
+    }
+
+    .hero {
+        display: block;
+        padding: 0;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 430px;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding: 55px 28px 70px;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .hero-text p {
+        font-size: 22px;
+    }
+
+    .gallery {
+        padding: 75px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 45px;
+    }
+
+    .art-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .about {
+        display: block;
+        padding: 75px 25px;
+    }
+
+    .about-text {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .about-image {
+        width: 100%;
+        height: 380px;
+    }
+
+    .about h2,
+    .exhibitions h2 {
+        font-size: 48px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="menu">☰</div>
+
+    <div class="logo">
+        SARINA GOLRANG
+        <span>GALLERY</span>
+    </div>
+
+    <div class="search">⌕</div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-image"></div>
+
+    <div class="hero-text">
+
+        <div class="small-title">WELCOME TO</div>
+
+        <h1>
+            Sarina<br>
+            Golrang<br>
+            Gallery
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p>
+            Art is a silent poetry of the soul.
+        </p>
+
+        <a href="#gallery" class="button">
+            EXPLORE GALLERY
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="gallery" id="gallery">
+
+    <div class="section-heading">
+
+        <div class="small-title">GALLERY</div>
+
+        <h2>Selected Works</h2>
+
+        <div class="ornament"></div>
+
+    </div>
+
+
+    <div class="art-grid">
+
+        <div class="art">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=85">
+        </div>
+
+        <div class="art">
+            <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=800&q=85">
+        </div>
+
+        <div class="art">
+            <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=800&q=85">
+        </div>
+
+        <div class="art">
+            <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?auto=format&fit=crop&w=800&q=85">
+        </div>
+
+        <div class="art">
+            <img src="https://images.unsplash.com/photo-1577083288073-40892c0860a4?auto=format&fit=crop&w=800&q=85">
+        </div>
+
+        <div class="art">
+            <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=800&q=85">
+        </div>
+
+    </div>
+
+
+    <div class="view-all">
+        <a href="#" class="button">VIEW ALL WORKS</a>
+    </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+    <div class="about-text">
+
+        <div class="small-title">ABOUT ME</div>
+
+        <h2>About the Artist</h2>
+
+        <p>
+            I'm Sarina Golrang, a painter who believes
+            in the beauty of quiet moments and raw emotions.
+            Through my paintings, I try to capture the poetry
+            hidden in everyday life.
+        </p>
+
+        <div class="signature">
+            Sarina Golrang
+        </div>
+
+    </div>
+
+    <div class="about-image"></div>
+
+</section>
+
+
+<section class="exhibitions">
+
+    <div class="small-title">EXHIBITIONS</div>
+
+    <h2>Recent Exhibitions</h2>
+
+    <div class="ornament"></div>
+
+</section>
+
+
+<footer>
+    © 2026 SARINA GOLRANG GALLERY
+</footer>
+
+</body>
+</html>
